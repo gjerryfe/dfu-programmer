@@ -899,7 +899,7 @@ static int32_t __atmel_blank_page_check( dfu_device_t *device,
         DEBUG( "Flash region from 0x%X to 0x%X is blank.\n", start, end );
     } else if ( DFU_STATUS_ERROR_CHECK_ERASED == status.bStatus ) {
         // need to DFU upload to get the address
-        DEBUG( "Region is NOT bank.\n" );
+        DEBUG( "Region is NOT blank.\n" );
         uint8_t addr[2] = { 0x00, 0x00 };
         int32_t retval = 0;
         if ( 2 != dfu_upload(device, 2, addr) ) {
